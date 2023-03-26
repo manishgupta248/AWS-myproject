@@ -1,0 +1,15 @@
+{% extends 'components/base.html' %}
+{% block title %}Notices{% endblock title %}
+{% block body %}
+<h2> Notice  </h2>
+<a href="{% url 'notice_create' %}"> Upload Notice</a> | <a href="{% url 'notice_list' %}">Back To Notice Page</a>
+
+<p> Id : {{notice.id}}</p>
+<p> Subject: {{notice.subject}}</p>
+<p> Notice Date: {{notice.notice_date}}</p>
+<p> Upload On: {{notice.upload_on}}</p>
+<p> View Notice: {{notice.subject}}<a href="{{x.notice_copy.url}}"> Click Here</a> </p>
+
+<a class="btn btn-primary" href="{% url 'notice_update' notice.pk %}" role="button">Edit Notice</a>
+<a class="btn btn-primary mx-3" href="{% url 'notice_delete' notice.pk %}" role="button">Delete Notice</a>
+{% endblock body %}

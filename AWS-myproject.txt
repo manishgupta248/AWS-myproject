@@ -1,0 +1,16 @@
+Django Project for AWS Deployment through Git
+***********************************************************
+>> python -m virtualenv env
+>> env/scripts/activate
+>> pip install django
+>> django-admin startproject myproject .
+
+**************************************************************
+Setup custom usre model
+
+>> python manage.py startapp accounts
+
+**************************************************************
+Setup Login, Signpup Pages and home
+**********************************************************
+

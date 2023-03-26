@@ -1,0 +1,15 @@
+{% extends 'components/base.html' %}
+{% block title %}Notices{% endblock title %}
+
+{% block body %}
+<h2> Plese Input the Details</h2>
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+
+  <p><a href="{% url 'notice_list' %}">Return to home</a></p>
+
+  {% endblock body %}

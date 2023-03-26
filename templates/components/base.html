@@ -1,0 +1,53 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock title %}</title>
+<!--Custom CSS-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+<!--For footer stylesheet-->
+    <link rel="stylesheet" href="https://kit.fontawesome.com/b74f7b1c0e.css" crossorigin="anonymous" />
+<!--Bootstrap-5 CSS CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <a href="{% url 'login' %}">Log In</a> |
+        <a href="{% url 'signup' %}">Sign Up</a>
+    </div>
+    <div class="row"> {% include "components/header.html" %} </div>
+<!--End of header/ start of body section -->
+
+    <div>
+        <div class="row">
+            <div class="col">
+                <div class="sidebarSection"> {% include "components/sidebar.html" %} </div>
+
+                <div class="page"> {% block body %}Hello, world!{% endblock body %} </div>
+                <script src="{% static "js/main.js" %}"></script>
+            </div>
+        </div>
+    </div>
+    <div class="row">{% include "components/footer.html" %} </div>
+<!--Bootstrap-5 JS CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<!-- jQuery footer -->
+    <script src="https://kit.fontawesome.com/b74f7b1c0e.js" crossorigin="anonymous" ></script>
+<!-- jQuery CDN - Slim version (=without AJAX) Imoprtant for Sidebar -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS  for sidebar-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<!--Sidebar Script-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>  
+</body>
+</html>

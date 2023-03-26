@@ -1,0 +1,25 @@
+{% extends 'components/base.html' %}
+{% block title %}Notices{% endblock title %}
+
+{% block body %}
+<h2> Notices  </h2>
+{% if user.is_authenticated %}
+<a href="{% url 'notice_create' %}"> Upload Notice</a> |
+{% endif %}
+
+  {% for x in object_list  %}
+  <div class="card  border-info  my-2" style="max-width: 40rem;  ">
+    <h5 class="card-header bg-info">Notice</h5>
+    <div class="card-body">
+      <h5 class="card-title"> Subject:<a href="{% url 'notice' x.id %}"> {{x.subject}}</a></h5>
+      <p class="card-text">Notice Date-{{x.notice_date}}   <a class="float-end">Upload On-{{x.upload_on}}</a>.</p>
+      <a href="{{x.notice_copy.url}}" class="btn btn-info">View Notice</a> 
+      {% if user.is_authenticated %}
+      <a href="{% url 'notice_update' x.id %}" class="btn btn-info mx-2">Edit Notice</a>
+      <a href="{% url 'notice_delete' x.id %}" class="btn btn-danger mx-2">Delete Notice</a>
+      <a>Uploaded by : {{x.upload_by}}</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  {% endblock body %}

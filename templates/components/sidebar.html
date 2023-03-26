@@ -1,0 +1,49 @@
+{% load static %}
+<nav id="sidebar">
+    <div class="sidebar-header">
+        {% comment %} <h3>JCBUST</h3> {% endcomment %}
+        <img src='{% static "images/jcbose-logo.png" %}'  alt="..." />
+    </div>
+
+    <ul class="list-unstyled components">
+        <p>welocme</p>
+        <li class="active">
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Affiliation</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    {% comment %} <a href="{% url 'college_list' %}">Affiliated Colleges</a> {% endcomment %}
+                </li>
+                <li>
+                    {% comment %} <a href="{% url 'affiliationfee_list' %}">Affiliation Fee</a> {% endcomment %}
+                </li>
+                <li>
+                    <a href="#">Home 3</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">About</a>
+        </li>
+        <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Academics</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    {% comment %} <a href="{% url 'course_list' %}">Courses</a> {% endcomment %}
+                </li>
+                <li>
+                    <a href="#">Page 2</a>
+                </li>
+                <li>
+                    <a href="#">Page 3</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            {% comment %} <a href="{% url 'notice_list' %}">Notices</a> {% endcomment %}
+        </li>
+        <li>
+            <a href="#">Contact</a>
+        </li>
+    </ul>
+</nav>
+

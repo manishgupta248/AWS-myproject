@@ -1,0 +1,14 @@
+{% extends 'components/base.html' %}
+{% block title %}MG-Project{% endblock title %}
+{% block body %}
+<h2> My home Page </h2>
+
+{% if user.is_authenticated %}
+Hi {{ user.username }}!
+<p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+<p>You are not logged in</p>
+{% endif %}
+<div id="root"></div>
+
+{% endblock body %}
